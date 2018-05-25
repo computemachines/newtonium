@@ -1,5 +1,4 @@
-include ':ui'
+include ':ui', ':graphics'
 
 rootProject.name = 'newtonium'
-include 'graphics'
 
