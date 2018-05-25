@@ -9,10 +9,6 @@ buildscript {
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "4.4"
-}
-
 group 'com.computemachines'
 version '1.0-SNAPSHOT'
 
