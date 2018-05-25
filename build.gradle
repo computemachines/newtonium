@@ -1,5 +1,8 @@
 buildscript {
     ext.kotlin_version = '1.2.41'
+    ext.lwjglVersion = "3.1.6"
+    ext.lwjglNatives = "natives-linux"
+    ext.jomlVersion = "1.9.9"
 
     repositories {
         mavenCentral()
@@ -37,7 +40,28 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile project(":ui")
+
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+
+    compile "org.lwjgl:lwjgl:$lwjglVersion"
+    compile "org.lwjgl:lwjgl-glfw:$lwjglVersion"
+    compile "org.lwjgl:lwjgl-opengl:$lwjglVersion"
+
+    compile "org.lwjgl:lwjgl:$lwjglVersion:$lwjglNatives"
+    compile "org.lwjgl:lwjgl-glfw:$lwjglVersion:$lwjglNatives"
+    compile "org.lwjgl:lwjgl-opengl:$lwjglVersion:$lwjglNatives"
+
+    compile "org.lwjgl:lwjgl:$lwjglVersion:natives-windows"
+    compile "org.lwjgl:lwjgl-glfw:$lwjglVersion:natives-windows"
+    compile "org.lwjgl:lwjgl-opengl:$lwjglVersion:natives-windows"
+
+    compile "org.joml:joml:$jomlVersion"
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 }
 
 compileKotlin {
